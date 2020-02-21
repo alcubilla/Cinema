@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+#padre {
+  position: relative;    /* para poder posicionar el texto de forma absoluta */
+  display: inline-block; /* para que solo ocupe el ancho de la imagen */
+}
+
+.card-title {
+  position: absolute;    /* posición absolute con respecto al padre */
+  top: 100px;             /* posicionada en la esquina inferior derecha */
+  left: 25px;
+  color: white;
+
+  font-size: 100px;
+  font-family: 'Shadows Into Light Two';
+}
+
+#p1{
+  position: absolute;
+  font-size: 1em;
+  bottom: 90px;
+  color: rgb(7, 6, 10);
+  font-weight: bold;
+  text-shadow: 1px 1px rgb(248, 246, 246);
+  font-size: 35px ;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-family:'Shadows Into Light Two' ;
+
+}
