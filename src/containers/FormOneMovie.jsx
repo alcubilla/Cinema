@@ -40,6 +40,16 @@ console.log(actors);
     return `${hours}h ${mins}m`;}
 
 
+   const convertMoney = (money) => {
+        let formatter = new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD',
+          minimumFractionDigits: 0,
+        });
+        return formatter.format(money);
+      }
+
+
     return (
 
        <>
@@ -61,12 +71,12 @@ console.log(actors);
                             </p>
                         </li>
                         <li className="list-group-item p-0">Running Time:  {calcTime(movie.runtime)}</li>
-                        <li className="list-group-item p-0">Budget: {movie.budget}</li>
+                        <li className="list-group-item p-0">Budget: {convertMoney(movie.budget)}</li>
                         {directors.length > 0 && directors.map((directors) => 
                       { return <li className="list-group-item p-0" key={directors.id}>Director: {directors.name}</li>})}
-                        <h5 className="mb-0">Revenue: {movie.revenue} </h5>
+                        <p className="mb-0">Revenue: {convertMoney(movie.revenue)} </p>
                     </ul>
-                    <div className="card-footer text-muted p-0">{movie.overview}</div>
+                    <div className="card-footer text-muted p-0"> {movie.overview} </div>
                 </div> 
             </div>   
         </div>
