@@ -1,16 +1,14 @@
 import React from "react";
-import Movie from "../pages/Movie"
+import CardMovie from "./CardMovie"
 
 const Movies = (props) => {
-  
-
-        const movies = props.data.map((movie, idx) => (
-            <div key={idx} className="col-3">
-             <Movie data={movie} />
-            </div>
-          ));
+  const movies = props.data.map((movie, idx) => (
+    <div key={idx} className="col-3">
+      <CardMovie data={movie} />
+    </div>
+  ));
             
-          return (<>{movies} </>);
+  return (<>{movies} </>);
 }
  
 export default Movies;
