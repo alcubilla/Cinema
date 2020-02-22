@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Movies from "../components/Movies";
-
+// import MoreMovies from "../components/MoreMovies";
+import Button from "../components/Button";
 
 const Home = () => {
+
     const [newMovie, setNewMovie] = useState( [] ); 
     const [allMovies, setAllMovies] = useState( [] ); 
+    
+ 
 
     useEffect(() => {
         const API_URL = 'https://api.themoviedb.org/3/';
@@ -18,30 +22,37 @@ const Home = () => {
             setNewMovie(data.results[0]);
             setAllMovies(data.results);
         })
-    }, []);
+    }, [ ]);
+
 
 
     const IMAGE_BASE_URL ='http://image.tmdb.org/t/p/';
    
     const backUrl = `${IMAGE_BASE_URL}w1280${newMovie.backdrop_path}`;
-
-
-
-    console.log (allMovies);
-    console.log (backUrl);
    
     return (
+        <>
     <div className="row container-fluid m-0 p-0" id="imagePadre">
- 
-        <img src={backUrl} className="img-fluid card-img" alt="No se encontro la imagen"/> 
-        <div className="card-title">   {newMovie.title}     </div>
-     
-      
-        <p id="p1">{newMovie.overview}</p>  
-        <div className="row">   
-            <Movies data={allMovies}/>  
+    <img src={backUrl} className="img-fluid card-img responsive p-2"  alt="No se encontro la imagen"/> 
+        
+        <div className="card-title" id="card-title1">  
+       
+         {newMovie.title}   
+            <p id="p1">{newMovie.overview}</p>    
         </div>
-    </div>
+     
+    </div> 
+    
+        <div className="row">   
+            <Movies data={allMovies} />  
+        </div>
+        <div className="row ">   
+        <div class="col-xl-9 offset-md-3 p-4"> <Button title="ver mas" /> </div>
+            
+        </div>
+
+      </>
+   
     );
 }
 

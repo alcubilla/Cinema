@@ -14,30 +14,83 @@ code {
 
 
 #padre {
-  position: relative;    /* para poder posicionar el texto de forma absoluta */
-  display: inline-block; /* para que solo ocupe el ancho de la imagen */
+  position: relative;  
+  display: inline-block; 
 }
 
-.card-title {
-  position: absolute;    /* posición absolute con respecto al padre */
-  top: 100px;             /* posicionada en la esquina inferior derecha */
+#card-title1 {
+  position: absolute;    
+  left:  0px;    
   left: 25px;
-  color: white;
-
-  font-size: 100px;
+  color: rgb(247, 244, 244);
+  font-size: 8vw;
   font-family: 'Shadows Into Light Two';
+  padding-left: 25px;
+  
 }
 
 #p1{
   position: absolute;
   font-size: 1em;
-  bottom: 90px;
-  color: rgb(7, 6, 10);
-  font-weight: bold;
-  text-shadow: 1px 1px rgb(248, 246, 246);
-  font-size: 35px ;
-  margin-left: 20px;
-  margin-right: 20px;
-  font-family:'Shadows Into Light Two' ;
+  top: initial;
+  color: rgb(234, 233, 236);
+  font-size: 2vmin;
+  font-family:'Lato' ;
+}
 
+#cart-1 {
+  position: absolute;   
+  font-family: 'Lato';
+  font-size: 12px;
+  font-weight: bold;
+  border: 0px;
+  width: auto;
+  height: auto;
+
+}
+
+#col-overview{
+  font-family: 'Shadows Into Light Two' ;
+  text-align: justify;
+  margin-left: 0px;
+  padding-left: 0mm;
+}
+
+#revenue{
+  font-size: 15px;
+  font-family:'Lato' ;
+  padding-left: 10px;
+}
+
+#oneimg{
+ display: flexbox;
+ align-items: center;
+ width: 18rem;
+ height: 100%;
+ margin: auto;
+
+}
+
+.card-img-top{
+  position: relative;  
+  width: 400px;
+  height: 400px;
+  width: auto;
+  padding-left: 10mm;
+
+}
+
+#img1{
+  border: 0px;
+  margin: 4px;
+  width: 18rem;
+  height: 100%;
+
+}
+.navbar {
+  min-height: 100px;
+  font-size: 35px;
+  padding-left: 30px;
+  padding-right: 30px;
+  
 }

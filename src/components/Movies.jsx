@@ -1,5 +1,5 @@
 import React from "react";
-import Movie from "./Movie"
+import Movie from "../pages/Movie"
 
 const Movies = (props) => {
   
@@ -10,10 +10,7 @@ const Movies = (props) => {
             </div>
           ));
             
-          return (<>{movies}</>);
-   
-     
-
+          return (<>{movies} </>);
 }
  
 export default Movies;
