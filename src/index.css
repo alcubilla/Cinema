@@ -39,13 +39,13 @@ code {
 }
 
 #cart-1 {
-  position: absolute;   
+  /* position: absolute;    */
   font-family: 'Lato';
   font-size: 12px;
   font-weight: bold;
   border: 0px;
-  width: auto;
-  height: auto;
+  /* width: auto;
+  height: auto; */
 
 }
 
@@ -93,4 +93,9 @@ code {
   padding-left: 30px;
   padding-right: 30px;
   
+}
+
+#actors{
+  align-items: center;
+  align-content: center;
 }

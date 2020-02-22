@@ -29,8 +29,10 @@ const Home = () => {
     fetch(url)
     .then(response => response.json())
     .then(info => {   
-    setAllMovies(info.results); });                
-    setCurrentPage(currentPage+1)                       
+    setAllMovies([...allMovies,...info.results])
+    setCurrentPage(currentPage+1)  
+    });                
+                        
     }
 
     const backUrl = `${IMAGE_BASE_URL}w1280${newMovie.backdrop_path}`;
@@ -50,8 +52,9 @@ const Home = () => {
             </div>
 
             <div className="row ">   
+            
                 <button className="btn btn-secondary btn-lg btn-block" onClick={goMore} >
-                    Ver más Películas
+                    Más películas
                 </button>
             </div>
             

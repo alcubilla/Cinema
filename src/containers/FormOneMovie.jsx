@@ -28,10 +28,11 @@ const OneMovie= (props)=> {
     fetch (actorsUrl)
     .then (response => response.json())
     .then (data => {
-    setActors(data);
+    setActors(data.cast);
     setDirectors(data.crew.filter(member => member.job === 'Director'));
     })}, [id]);
         
+console.log(actors);
 
     const calcTime = (time) => {
     const hours = Math.floor( time / 60);
@@ -41,8 +42,8 @@ const OneMovie= (props)=> {
 
     return (
 
-       
-        <div className="row" style={{ height: 'auto', background:({imgUrl}) , backgroundSize: 'cover'}}>
+       <>
+        <div className="row responsive" style={{background:({imgUrl})}}>
             <div className="col-6" id="oneimg">
                 <div className="card text-center responsive p-2" id="cart-1">
                     <img className="card-img-top responsive p-0" src={imgUrl} alt="no se encontro"/>
@@ -52,7 +53,7 @@ const OneMovie= (props)=> {
                     </div>
                     <ul className="list-group list-group-flush">
                         <li className="list-group-item p-0 mb-0">
-                            <p>Got a {movie.vote_average} 
+                            <p>Got a {movie.vote_average} -
                                 <meter low="69" high="80" max="10"
                                     value={movie.vote_average}>
                                 </meter> 
@@ -63,16 +64,30 @@ const OneMovie= (props)=> {
                         <li className="list-group-item p-0">Budget: {movie.budget}</li>
                         {directors.length > 0 && directors.map((directors) => 
                       { return <li className="list-group-item p-0" key={directors.id}>Director: {directors.name}</li>})}
-                        <p className="mb-0">Revenue: {movie.revenue} </p>
+                        <h5 className="mb-0">Revenue: {movie.revenue} </h5>
                     </ul>
-                   
                     <div className="card-footer text-muted p-0">{movie.overview}</div>
-                </div>
-            </div>
-
-
-           
+                </div> 
+            </div>   
         </div>
+
+        <table class="table table-borderless table-dark table-responsive">
+        <tr>
+            {actors.length > 0 && actors.map((actor) =>  { return <>
+            <th scope="col">
+            <img src={`${IMAGE_BASE_URL}w154/${actor.profile_path}`}  alt="No se encontro la imagen"/> 
+            <p>{actor.name}</p> </th> </> })}
+        </tr>
+     
+</table>
+    </>
+   
+   
+
+
+
+
+
     );
 }
 export default OneMovie;
